@@ -70,6 +70,7 @@ namespace easyUITest.Controllers
         public List<string> ListString()
         {
             return new List<string>() { "100","200","300"};
+            var a = 3;
         }
 
         //[HttpPost]
