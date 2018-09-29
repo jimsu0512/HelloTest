@@ -34,3 +34,11 @@ packages/
 *.dll
 #忽略build文件夹
 build
+#忽略Test类库文件夹
+eUI.Test/App.config
+eUI.Test/BannerInfo.cs
+eUI.Test/BannerType.cs
+eUI.Test/eUI.Test.csproj
+eUI.Test/packages.config
+eUI.Test/Program.cs
+eUI.Test/Properties/AssemblyInfo.cs
