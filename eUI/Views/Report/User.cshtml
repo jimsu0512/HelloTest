@@ -1,0 +1,13 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@section header{
+    @Scripts.Render(eUI.Common.JsFiles.ECharts)
+    @Scripts.Render(eUI.Common.JsFiles.UserReport)
+}
+
+<a id="btnRefresh" href="#" class="easyui-linkbutton" >刷新</a>
+<div id="main" style="width: 600px;height:400px;"></div>
+

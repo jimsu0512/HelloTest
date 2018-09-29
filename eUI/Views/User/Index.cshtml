@@ -1,0 +1,97 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@section header{
+    @Scripts.Render(eUI.Common.JsFiles.UserInfo)
+    @Scripts.Render(eUI.Common.JsFiles.GridToExport)
+    @Scripts.Render(eUI.Common.JsFiles.JsCommon)
+    @Scripts.Render(eUI.Common.JsFiles.DatagridFilter)
+    @Scripts.Render(eUI.Common.JsFiles.UserPermissionSet)
+    @Scripts.Render(eUI.Common.JsFiles.UserUploadPic)
+    @Scripts.Render(eUI.Common.JsFiles.UserGridEditingInline)
+    @Scripts.Render(eUI.Common.JsFiles.UserAddEditDel)
+}
+
+<label>用户名:</label>
+<input id="txtSearchUserName" class="easyui-textbox" />
+<label>创建日期:</label>
+<input id="txtstTime" type="text" />
+到:
+<input id="txtedTime" type="text" />
+<a id="btnSearch" class="easyui-linkbutton" href="javascript:void(0)">确定</a>
+
+<div id="usergrid"></div>
+
+    <div id="userdialog" closed="true" class="easyui-window">
+        <form id="userInfoForm" method="post">
+            <input id="txtHideID" name="id" style="display: none" />
+            <div>
+                <label for="name">用户名:</label>
+                <input id="txtAccount" value="158501306611" class="easyui-textbox" data-options="required:true" name="Account" missingmessage="不能为空" />
+            </div>
+            <div>
+                <label for="pwd">密码:</label>
+                <input id="txtPwd" value="123456" class="easyui-passwordbox" data-options="required:true" name="Pwd" missingmessage="不能为空" />
+            </div>
+            <div>
+                <label for="pwdagain">确认密码:</label>
+                <input id="txtPwdAgain" value="123456" class="easyui-passwordbox" data-options="required:true" name="pwdagain" validtype="equals['#txtPwd']" missingmessage="不能为空" />
+            </div>
+            <div>
+                <label>手机号:</label>
+                <input id="txtTel" value="158501306611" class="easyui-textbox" name="Tel" type="text" />
+            </div>
+            <div>
+                <label>昵称:</label>
+                <input id="txtNickName" value="昵称-6611" class="easyui-textbox" name="NickName" type="text" />
+            </div>
+            <div>
+                <label for="gender">性别:</label>
+                <input id="rdmale" type="radio" value="1" name="Gender" /><label for="rdmale"> 男</label>
+                <input id="rdfemale" type="radio" value="0" name="Gender" checked /><label for="rdfemale"> 女</label>
+            </div>
+            <div>
+                <label id="birthday">生日:</label>
+                <input id="txtBirthday" class="easyui-datetimebox" name="Birthday" data-options="required:true,showSeconds:false" value="3/4/2017 2:3" />@*style="width:150px"*@
+            </div>            
+            <div>
+                <label>星星:</label>
+                <input id="txtPjCount" type="text" class="easyui-numberbox" name="PjCount" value="3" data-options="min:0,max:5">
+            </div>
+        </form>
+    </div>
+
+    <div class="easyui-window" id="userUploadPic" title="文件上传" style="width:400px;height:160px;padding:2px;" closed="true">
+        <form id="importFileForm" method="post" enctype="multipart/form-data" style="display:none">
+            <table style="margin:5px;height:70px;">
+                <tr>
+                    <td>请选择文件:</td>
+                    <td width="2px;"></td>
+                    <td>
+                        <input id="fileToUpload" name="fileToUpload" style="width:240px" />
+                        @*<input type="file" name="filename" />*@
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td colspan="4"><label id="fileInfo" /></td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <label id="uploadInfo" />
+                    </td>
+                </tr>
+            </table><div style="text-align:center;clear:both;margin:5px;">
+                <a id="uploadFile" class="easyui-linkbutton" data-options="iconCls:'icon-ok',onClick:importFileClick" href="javascript:void(0)">上传</a>
+                <a class="easyui-linkbutton" data-options="iconCls:'icon-cancel'" data-bind="click:closeImportClick" href="javascript:void(0)">关闭</a>
+            </div>
+        </form>
+    </div>
+
+    <div id="userPermission" closed="true" class="easyui-window">
+        <ul id="permissionTree"></ul>
+    </div>
+
+

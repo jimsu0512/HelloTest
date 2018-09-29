@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render(eUI.Common.CssFiles.easyUI)
+    @Styles.Render(eUI.Common.CssFiles.easyUIicon)
+    @Scripts.Render(eUI.Common.JsFiles.jQuery)
+    @Scripts.Render(eUI.Common.JsFiles.easyUI)
+
+    @RenderSection("header")
+</head>
+<body>
+    @RenderBody()
+</body>
+</html>

@@ -1,0 +1,49 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@section header{
+    @Scripts.Render(eUI.Common.JsFiles.UserActivityInfo)
+    @Scripts.Render(eUI.Common.JsFiles.JsCommon)
+    @Scripts.Render(eUI.Common.JsFiles.DatagridFilter)
+    @Scripts.Render(eUI.Common.JsFiles.UserActivityGridEditingInline)
+    @Scripts.Render(eUI.Common.JsFiles.UserActivityAddEditDel)
+}
+
+<div id="userActivityGrid"></div>
+
+<div id="userActivityDialog" closed="true" class="easyui-window">
+    <form id="userActivityForm" method="post">
+        <div>
+            <label for="name">选择用户:</label>
+            <input id="selUserInfo" name="UAUserId">
+        </div>
+        <div>
+            <label>活动名称:</label>
+            <input id="txtActivityName" value="活动名称" class="easyui-textbox" name="UAActivityName" type="text" />
+        </div>
+        <div>
+            <label>活动介绍:</label>
+            <input type="text" class="easyui-textbox" name="UAIntroduce">
+        </div>
+        <div>
+            <label>价格:</label>
+            <input type="text" class="easyui-numberbox" name="UAPrice" value="100" data-options="min:0,precision:0">
+        </div>
+        <div>
+            <label>是否有效:</label>
+            <select id="comboxIsValid" class="easyui-combobox" name="UAIsValid" @*style="width:50px;"*@>
+                <option value="0">否</option>
+                <option value="1" selected>是</option>
+            </select>
+        </div>
+        <div>
+            <label>是否删除:</label>
+            <select id="comboxIsDel" class="easyui-combobox" name="UAIsDel" @*style="width:50px;"*@>
+                <option value="0" selected>否</option>
+                <option value="1">是</option>
+            </select>
+        </div>
+    </form>
+</div>

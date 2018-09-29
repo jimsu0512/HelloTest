@@ -1,0 +1,23 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@section header{
+    @Scripts.Render(eUI.Common.JsFiles.BannerType)
+    @Scripts.Render(eUI.Common.JsFiles.JsCommon)
+    @Scripts.Render(eUI.Common.JsFiles.DatagridFilter)
+    @Scripts.Render(eUI.Common.JsFiles.BannerTypeGridEditingInline)
+    @Scripts.Render(eUI.Common.JsFiles.BannerTypeAddEditDel)
+}
+
+<div id="bannerTypeGird"></div>
+
+<div id="bannerTypeDialog" closed="true" class="easyui-window">
+    <form id="bannerTypeForm" method="post">       
+        <div>
+            <label for="name">类型名称:</label>
+            <input id="txtCBTypeName" value="类型名称" class="easyui-textbox" data-options="required:true" name="CBTypeName" missingmessage="不能为空" />
+        </div>
+    </form>
+</div>

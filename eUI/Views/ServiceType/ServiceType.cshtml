@@ -1,0 +1,69 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@section header{
+    @Scripts.Render(eUI.Common.JsFiles.ServiceTypeInfo)
+    @Scripts.Render(eUI.Common.JsFiles.JsCommon)
+    @Scripts.Render(eUI.Common.JsFiles.DatagridFilter)
+    @Scripts.Render(eUI.Common.JsFiles.ServiceTypeUploadPic)
+    @Scripts.Render(eUI.Common.JsFiles.ServiceTypeGridEditingInline)
+    @Scripts.Render(eUI.Common.JsFiles.ServiceTypeAddEditDel)
+}
+
+<div id="serviceTypeGrid"></div>
+
+<div id="serviceTypeDialog" closed="true" class="easyui-window">
+    <form id="serviceTypeForm" method="post">
+        <input id="txtHideID" name="id" style="display: none" />
+        <div>
+            <label for="name">类型名称:</label>
+            <input id="typeName" name="CSTTypeName">
+        </div>        
+        <div>
+            <label>价格:</label>
+            <input type="text" class="easyui-numberbox" name="CSTDaliPrice" value="2" data-options="min:0,precision:0">
+        </div>
+        <div>
+            <label>是否有效:</label>
+            <select id="comboxIsValid" class="easyui-combobox" name="CSTIsValid" style="width:50px;">
+                <option value="0">否</option>
+                <option value="1" selected>是</option>
+            </select>
+        </div>
+        <div>
+            <label>是否删除:</label>
+            <select id="comboxIsDel" class="easyui-combobox" name="CSTIsDel" style="width:50px;">
+                <option value="0" selected>否</option>
+                <option value="1">是</option>
+            </select>
+        </div>
+    </form>
+</div>
+
+<div class="easyui-window" id="serviceTypeUploadPic" title="文件上传" style="width:400px;height:160px;padding:2px;" closed="true">
+    <form id="serviceTypeFileForm" method="post" enctype="multipart/form-data" style="display:none">
+        <table style="margin:5px;height:70px;">
+            <tr>
+                <td>请选择文件:</td>
+                <td width="2px;"></td>
+                <td>
+                    <input id="fileToUpload" name="fileToUpload" style="width:240px" />
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="4"><label id="fileInfo" /></td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <label id="uploadInfo" />
+                </td>
+            </tr>
+        </table><div style="text-align:center;clear:both;margin:5px;">
+            <a id="uploadFile" class="easyui-linkbutton" data-options="iconCls:'icon-ok',onClick:importFileClick" href="javascript:void(0)">上传</a>
+            <a class="easyui-linkbutton" data-options="iconCls:'icon-cancel'" data-bind="click:closeImportClick" href="javascript:void(0)">关闭</a>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,72 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@section header{
+    @Scripts.Render(eUI.Common.JsFiles.BannerInfo)
+    @Scripts.Render(eUI.Common.JsFiles.JsCommon)
+    @Scripts.Render(eUI.Common.JsFiles.DatagridFilter)
+    @Scripts.Render(eUI.Common.JsFiles.BannerUploadPic)
+    @Scripts.Render(eUI.Common.JsFiles.BannerInfoGridEditingInline)
+    @Scripts.Render(eUI.Common.JsFiles.BannerInfoAddEditDel)
+}
+
+<div id="bannerInfoGrid"></div>
+
+<div id="bannerInfoDialog" closed="true" class="easyui-window">
+    <form id="bannerInfoForm" method="post">        
+        <div>
+            <label for="name">选择类型:</label>
+            <input id="selBannerType" name="CBannerType">
+        </div>
+        <div>
+            <label>Banner名称:</label>
+            <input id="txtBannerName" value="Banner名称" class="easyui-textbox" name="CBannerName" type="text" />
+        </div>
+        <div>
+            <label>排序:</label>
+            <input type="text" class="easyui-numberbox" name="CSort" value="100" data-options="min:0,precision:0">
+        </div>
+        <div>
+            <label>是否有效:</label>
+            <select id="comboxIsValid" class="easyui-combobox" name="CBIsValid" @*style="width:50px;"*@>
+                <option value="0">否</option>
+                <option value="1" selected>是</option>
+            </select>
+        </div>
+        <div>
+            <label>是否删除:</label>
+            <select id="comboxIsDel" class="easyui-combobox" name="CBIsDel" @*style="width:50px;"*@>
+                <option value="0" selected>否</option>
+                <option value="1">是</option>
+            </select>
+        </div>
+    </form>
+</div>
+
+<div class="easyui-window" id="bannerInfoUploadPic" title="文件上传" style="width:400px;height:160px;padding:2px;" closed="true">
+    <form id="bannerInfoFileForm" method="post" enctype="multipart/form-data" style="display:none">
+        <table style="margin:5px;height:70px;">
+            <tr>
+                <td>请选择文件:</td>
+                <td width="2px;"></td>
+                <td>
+                    <input id="fileToUpload" name="fileToUpload" style="width:240px" />
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="4"><label id="fileInfo" /></td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <label id="uploadInfo" />
+                </td>
+            </tr>
+        </table><div style="text-align:center;clear:both;margin:5px;">
+            <a id="uploadFile" class="easyui-linkbutton" data-options="iconCls:'icon-ok',onClick:importFileClick" href="javascript:void(0)">上传</a>
+            <a class="easyui-linkbutton" data-options="iconCls:'icon-cancel'" data-bind="click:closeImportClick" href="javascript:void(0)">关闭</a>
+        </div>
+    </form>
+</div>
