@@ -70,7 +70,6 @@ namespace easyUITest.Controllers
         public List<string> ListString()
         {
             return new List<string>() { "100","200","300"};
-            //测试更改自己的分支
         }
 
         //[HttpPost]
