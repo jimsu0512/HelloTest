@@ -103,6 +103,17 @@ namespace eUI.DAL.DBUtility
                 return _connection.Get<T>(id);
             }
         }
+
+        /// <summary>
+        /// 根据ID获取实体对象
+        /// </summary>
+        public T GetModel(long id)
+        {
+            using (_connection = GetOpenConnection())
+            {
+                return _connection.Get<T>(id);
+            }
+        }
         /// <summary>
         /// 获取实体对象列表
         /// </summary>

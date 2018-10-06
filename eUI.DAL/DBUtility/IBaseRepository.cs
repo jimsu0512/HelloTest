@@ -33,6 +33,8 @@ namespace eUI.DAL.DBUtility
         /// 根据ID获取实体对象
         /// </summary>
         T GetModel(int Id);
+
+        T GetModel(long id);
         ///<summary>
         /// 获取实体列表
         /// </summary>

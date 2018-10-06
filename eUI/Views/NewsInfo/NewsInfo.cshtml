@@ -1,0 +1,58 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@section header{
+    @Styles.Render(eUI.Common.CssFiles.kindeditorCss)
+    @Scripts.Render(eUI.Common.JsFiles.kindeditorJS)
+    @Scripts.Render(eUI.Common.JsFiles.kindeditorZHCN)
+    @Scripts.Render(eUI.Common.JsFiles.NewsInfo)
+    @Scripts.Render(eUI.Common.JsFiles.JsCommon)
+    @Scripts.Render(eUI.Common.JsFiles.DatagridFilter)
+    @Scripts.Render(eUI.Common.JsFiles.NewsInfoGridEditingInline)
+    @Scripts.Render(eUI.Common.JsFiles.NewsInfoAddEditDel)
+
+}
+
+<div id="newsInfoGrid"></div>
+
+<div id="newsInfoDialog" closed="true" class="easyui-window">
+    <form id="newsInfoForm" method="post">
+        <div>
+            <label>新闻标题:</label>
+            <input id="txtBannerName" value="新闻标题" class="easyui-textbox" name="NTitle" type="text" />
+        </div>
+        <textarea id="editor" style="width:600px;height:400px;visibility:hidden;">
+        </textarea>
+        <div>
+            <label>是否有效:</label>
+            <select id="comboxIsValid" class="easyui-combobox" name="CBIsValid" @*style="width:50px;"*@>
+                <option value="0">否</option>
+                <option value="1" selected>是</option>
+            </select>
+        </div>
+    </form>
+</div>
+
+<script type="text/javascript">
+ $(function () {
+        //详情编辑器
+        KindEditor.ready(function (K) {
+            this.editor
+                = K.create('textarea[id="editor"]', {
+                items: ['source', '|', 'undo', 'redo', '|', 'preview', 'print', 'template', 'code', 'cut', 'copy', 'paste',
+                    'plainpaste', 'wordpaste', '|', 'justifyleft', 'justifycenter', 'justifyright',
+                    'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent', 'subscript',
+                    'superscript', 'clearhtml', 'quickformat', 'selectall', '|', 'fullscreen', '/',
+                    'formatblock', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold',
+                    'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'multiimage',
+                    'table', 'hr', 'emoticons', 'baidumap', 'pagebreak',
+                    'anchor', 'link', 'unlink'],
+                uploadJson: '/images',//指定上传图片的服务器端程序
+                fileManagerJson: '/images',//指定浏览远程图片的服务器端程序
+                allowFileManager: true
+            });
+        });
+    });
+</script>

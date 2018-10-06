@@ -34,6 +34,9 @@ namespace eUI.Common
         public static string UserBoardTest = "/Js/User/BoardTest.js?ver=" + ver;
         public static string WxPage = "/Js/Wx/WxPage.js?ver=" + ver;
         public static string eUIMaskMsg = "/Js/EasyUIPlug/eUIMaskMsg.js?ver=" + ver;
+        //富文本编辑器
+        public static string kindeditorJS = "/kindeditor/kindeditor-all-min.js?ver=" + ver;
+        public static string kindeditorZHCN = "/kindeditor/lang/zh_CN.js? ver=" + ver;
 
         public static string BannerType = "/Js/BannerType/BannerType.js?ver=" + ver;
         public static string BannerTypeAddEditDel = "/Js/BannerType/AddEditDel.js?ver=" + ver;
@@ -52,5 +55,9 @@ namespace eUI.Common
         public static string UserActivityInfo = "/Js/UserActivity/UserActivity.js?ver=" + ver;
         public static string UserActivityAddEditDel = "/Js/UserActivity/AddEditDel.js?ver=" + ver;
         public static string UserActivityGridEditingInline = "/Js/UserActivity/GridEditingInline.js?ver=" + ver;
+
+        public static string NewsInfo = "/Js/NewsInfo/NewsInfo.js?ver=" + ver;
+        public static string NewsInfoAddEditDel = "/Js/NewsInfo/AddEditDel.js?ver=" + ver;
+        public static string NewsInfoGridEditingInline = "/Js/NewsInfo/GridEditingInline.js?ver=" + ver;
     }
 }

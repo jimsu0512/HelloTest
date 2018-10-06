@@ -51,6 +51,7 @@
     <Compile Include="Config_BannerInfoBLL.cs" />
     <Compile Include="Config_BannerTypeBLL.cs" />
     <Compile Include="Config_ServiceTypeBLL.cs" />
+    <Compile Include="N_NewsInfoBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserActivityBLL.cs" />
     <Compile Include="UserInfoBLL.cs" />

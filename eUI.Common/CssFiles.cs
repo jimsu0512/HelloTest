@@ -13,5 +13,7 @@ namespace eUI.Common
         public static string easyUI = "/easyui/1.5/themes/default/easyui.css";
         public static string zTreedemo = "/zTree/css/demo.css";
         public static string zTreeStyle = "/zTree/css/zTreeStyle/zTreeStyle.css";
+        //富文本
+        public static string kindeditorCss = "/kindeditor/themes/default/default.css";
     }
 }

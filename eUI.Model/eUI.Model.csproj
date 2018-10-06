@@ -55,6 +55,7 @@
     <Compile Include="Config_BannerType.cs" />
     <Compile Include="Config_ServiceType.cs" />
     <Compile Include="ExportExcelModel.cs" />
+    <Compile Include="N_NewsInfo.cs" />
     <Compile Include="OrderEnd.cs" />
     <Compile Include="OrderInfo.cs" />
     <Compile Include="PermissionSetModel.cs" />
