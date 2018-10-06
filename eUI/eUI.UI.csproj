@@ -144,6 +144,7 @@
     <Compile Include="Controllers\BannerTypeController.cs" />
     <Compile Include="Controllers\ExportController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PermissionSetController.cs" />
     <Compile Include="Controllers\ServiceTypeController.cs" />
     <Compile Include="Controllers\UploadController.cs" />
@@ -656,6 +657,7 @@
     <Content Include="Views\Banner\BannerType.cshtml" />
     <Content Include="Views\ServiceType\ServiceType.cshtml" />
     <Content Include="Views\UserActivity\UserActivity.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

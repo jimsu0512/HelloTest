@@ -67,6 +67,7 @@
     <Compile Include="UserInfo.cs" />
     <Compile Include="UserReportModel.cs" />
     <Compile Include="ViewModel\BannerInfoVM.cs" />
+    <Compile Include="ViewModel\LoginVM.cs" />
     <Compile Include="ViewModel\UserActivityVM.cs" />
   </ItemGroup>
   <ItemGroup>
